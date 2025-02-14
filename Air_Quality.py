@@ -45,8 +45,8 @@ pm25 = PM25_UART(uart, reset_pin)
 # Connect to a PM2.5 sensor over I2C
 #pm25 = PM25_I2C(i2c, reset_pin)
 file = open("data.csv", "a", newline=None)
-    file_writer = csv.writer(file)
-    file_writer.writerow(["time", "data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8"])
+file_writer = csv.writer(file)
+file_writer.writerow(["time", "data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8"])
 print("Found PM2.5 sensor, reading data...")
 
 while True:
