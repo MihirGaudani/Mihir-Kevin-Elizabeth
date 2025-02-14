@@ -85,8 +85,6 @@ while True:
     file = open("data.csv", "w", newline=none)
     file_writer = csv.writer(file)
      file_writer.writerow(["time", "data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8"])
-    print("Concentration Units (standard)")
-    print("---------------------------------------")
     data1 = "PM 1.0: %d\tPM2.5: %d\tPM10: %d"  % (aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"])
     data2 = "PM 1.0: %d\tPM2.5: %d\tPM10: %d" % (aqdata["pm10 env"], aqdata["pm25 env"], aqdata["pm100 env"])
 
