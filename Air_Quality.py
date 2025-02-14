@@ -46,7 +46,7 @@ pm25 = PM25_UART(uart, reset_pin)
 #pm25 = PM25_I2C(i2c, reset_pin)
 file = open("data.csv", "w", newline=None)
 file_writer = csv.writer(file)
-file_writer.writerow(["time", "data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8"])
+file_writer.writerow(["time", "data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12"])
 print("Found PM2.5 sensor, reading data...")
 
 while True:
@@ -80,16 +80,20 @@ while True:
     print("Particles > 5.0um / 0.1L air:", aqdata["particles 50um"])
     print("Particles > 10 um / 0.1L air:", aqdata["particles 100um"])
     print("---------------------------------------")
-    data1 = (aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"])
-    data2 = (aqdata["pm10 env"], aqdata["pm25 env"], aqdata["pm100 env"])
-    data3 = aqdata["particles 03um"]
-    data4 = aqdata["particles 05um"]
-    data5 = aqdata["particles 10um"]
-    data6 = aqdata["particles 25um"]
-    data7 = aqdata["particles 50um"]
-    data8 = aqdata["particles 100um"]
+    data1 = aqdata["pm10 standard"]
+    data2 = aqdata["pm25 standard"]
+    data3 = aqdata["pm100 standard"]
+    data4 = aqdata["pm10 env"] 
+    data5 = aqdata["pm25 env"] 
+    data6 = aqdata["pm100 env"]
+    data7 = aqdata["particles 03um"]
+    data8 = aqdata["particles 05um"]
+    data9 = aqdata["particles 10um"]
+    data10 = aqdata["particles 25um"]
+    data11 = aqdata["particles 50um"]
+    data12 = aqdata["particles 100um"]
     time1 = time.time()
-    file_writer.writerow([time1, data1, data2, data3, data4, data5, data6, data7, data8])
+    file_writer.writerow([time1, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12])
 
 
 
