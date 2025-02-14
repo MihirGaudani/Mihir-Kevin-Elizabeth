@@ -94,5 +94,5 @@ while True:
     data6 = "Particles > 2.5um / 0.1L air:", aqdata["particles 25um"]
     data7 = "Particles > 5.0um / 0.1L air:", aqdata["particles 50um"]
     data8 = "Particles > 10 um / 0.1L air:", aqdata["particles 100um"]
-    time = time.time()
-    file_writer.writerow([time, data1, data2, data3, data4, data5, data6, data7, data8])
+    time1 = time.time()
+    file_writer.writerow([time1, data1, data2, data3, data4, data5, data6, data7, data8])
