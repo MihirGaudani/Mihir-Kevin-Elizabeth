@@ -109,7 +109,7 @@ while count < runtime:
          data15 = int(bme680.pressure)
          data16 = int(bme680.altitude)
          time1 = int(time.time())
-   elif variable_type == 2:
+    elif variable_type == 2:
 	 data1 = str(aqdata["pm10 standard"])
          data2 = str(aqdata["pm25 standard"])
          data3 = str(aqdata["pm100 standard"])
