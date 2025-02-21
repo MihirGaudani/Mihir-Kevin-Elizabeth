@@ -54,19 +54,9 @@ file_writer.writerow(["time", "data1", "data2", "data3", "data4", "data5", "data
 print("Found PM2.5 sensor, reading data...")
 print(sys.argv)
 print("how long do you want this to run for (in seconds)")
-runtime = 10
-if len(sys.argv) < 2
-    print("script requires run_time(int) as an input)
-    #exit()
-else
-	  runtime = int(sys.argv[1])
+runtime = int(sys.argv[1])
 print("enter 1 for integer /n 2 for string /n 3 for float")
-
-if len(sys.argv) < 2
-    print("script requires variable_type(int) as an input)
-    #exit()
-else
-   variable_type = int(sys.argv[2])
+variable_type = int(sys.argv[2])
 while count < runtime:
     time.sleep(1)
 
