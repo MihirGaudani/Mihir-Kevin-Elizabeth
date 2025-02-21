@@ -56,7 +56,7 @@ print(sys.argv)
 
 print("how long do you want this to run for (in seconds)")
 runtime = int(sys.argv[1])
-print("enter 1 for integer /n 2 for string /n 3 for float")
+print("enter 1 for integer /n 2 for string")
 variable_type = int(sys.argv[2])
 count = 0
 while count < runtime:
@@ -112,8 +112,6 @@ while count < runtime:
         file_writer.writerow(int([time1, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15, data16]))
     elif variable_type == 2:
         file_writer.writerow(str([time1, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15, data16]))
-    elif variable_type == 3:
-        file_writer.writerow(float([time1, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15, data16]))
     count = count + 1
 		
 	
