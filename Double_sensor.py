@@ -13,6 +13,7 @@ from digitalio import DigitalInOut, Direction, Pull
 import adafruit_pm25
 import csv
 import adafruit_bme680
+import sys
 
 reset_pin = None
 # If you have a GPIO, its not a bad idea to connect it to the RESET pin
@@ -51,8 +52,22 @@ file = open("data.csv", "w", newline=None)
 file_writer = csv.writer(file)
 file_writer.writerow(["time", "data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12"])
 print("Found PM2.5 sensor, reading data...")
+print(sys.argv)
+print("how long do you want this to run for (in seconds)")
+runtime = 10
+if len(sys.argv) < 2
+    print("script requires run_time(int) as an input)
+    #exit()
+else
+	  runtime = int(sys.argv[1])
+print("enter 1 for integer /n 2 for string /n 3 for float")
 
-while True:
+if len(sys.argv) < 2
+    print("script requires variable_type(int) as an input)
+    #exit()
+else
+   variable_type = int(sys.argv[2])
+while count < runtime:
     time.sleep(1)
 
     try:
@@ -83,6 +98,7 @@ while True:
     print("Particles > 5.0um / 0.1L air:", aqdata["particles 50um"])
     print("Particles > 10 um / 0.1L air:", aqdata["particles 100um"])
     print("---------------------------------------")
+    print("\n", time.ctime(),"Temperature %0.1f C" % bme680.temperature,"Gas %d ohm" % bme680.temperature,"Humidity: %0.1f %%" % bme680.relative_humidity,"Pressure: %0.3f hPa" % bme680.pressure,"Altitude = %0.2f meters" % bme680.altitude,time.ctime())
     data1 = aqdata["pm10 standard"]
     data2 = aqdata["pm25 standard"]
     data3 = aqdata["pm100 standard"]
@@ -95,9 +111,19 @@ while True:
     data10 = aqdata["particles 25um"]
     data11 = aqdata["particles 50um"]
     data12 = aqdata["particles 100um"]
+    data13 = bme680.temperature
+    data14 = bme680.relative_humidity
+    data15 = bme680.pressure
+    data16 = bme680.altitude
     time1 = time.time()
-    file_writer.writerow([time1, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12])
-		print("\n", time.ctime(),"Temperature %0.1f C" % bme680.temperature,"Gas %d ohm" % bme680.temperature,"Humidity: %0.1f %%" % bme680.relative_humidity,"Pressure: %0.3f hPa" % bme680.pressure,"Altitude = %0.2f meters" % bme680.altitude,time.ctime())
+    if variable_type == 1:
+    file_writer.writerow(int([time1, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15, data16]))
+    else if variable_type == 2:
+    file_writer.writerow(str([time1, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15, data16]))
+    else if variable_type == 3:
+    file_writer.writerow(float([time1, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15, data16]))
+
+		
 	
 
 	
