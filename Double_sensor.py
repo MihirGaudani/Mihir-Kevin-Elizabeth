@@ -108,9 +108,9 @@ while count < runtime:
     time1 = time.time()
     if variable_type == 1:
         file_writer.writerow(int([time1, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15, data16]))
-    else if variable_type == 2:
+    elif variable_type == 2:
         file_writer.writerow(str([time1, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15, data16]))
-    else if variable_type == 3:
+    elif variable_type == 3:
         file_writer.writerow(float([time1, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15, data16]))
 
 		
