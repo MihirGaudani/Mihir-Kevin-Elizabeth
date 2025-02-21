@@ -53,10 +53,12 @@ file_writer = csv.writer(file)
 file_writer.writerow(["time", "data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12"])
 print("Found PM2.5 sensor, reading data...")
 print(sys.argv)
+
 print("how long do you want this to run for (in seconds)")
-runtime = int(sys.argv[1])
+runtime = int(sys.argv[0])
 print("enter 1 for integer /n 2 for string /n 3 for float")
-variable_type = int(sys.argv[2])
+variable_type = int(sys.argv[1])
+
 while count < runtime:
     time.sleep(1)
 
