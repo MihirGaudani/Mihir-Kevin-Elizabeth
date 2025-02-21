@@ -55,9 +55,9 @@ print("Found PM2.5 sensor, reading data...")
 print(sys.argv)
 
 print("how long do you want this to run for (in seconds)")
-runtime = int(sys.argv[0])
+runtime = int(sys.argv[1])
 print("enter 1 for integer /n 2 for string /n 3 for float")
-variable_type = int(sys.argv[1])
+variable_type = int(sys.argv[2])
 
 while count < runtime:
     time.sleep(1)
