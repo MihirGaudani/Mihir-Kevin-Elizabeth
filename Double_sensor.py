@@ -91,27 +91,44 @@ while count < runtime:
     print("Particles > 10 um / 0.1L air:", aqdata["particles 100um"])
     print("---------------------------------------")
     print("\n", time.ctime(),"Temperature %0.1f C" % bme680.temperature,"Gas %d ohm" % bme680.temperature,"Humidity: %0.1f %%" % bme680.relative_humidity,"Pressure: %0.3f hPa" % bme680.pressure,"Altitude = %0.2f meters" % bme680.altitude,time.ctime())
-    data1 = aqdata["pm10 standard"]
-    data2 = aqdata["pm25 standard"]
-    data3 = aqdata["pm100 standard"]
-    data4 = aqdata["pm10 env"] 
-    data5 = aqdata["pm25 env"] 
-    data6 = aqdata["pm100 env"]
-    data7 = aqdata["particles 03um"]
-    data8 = aqdata["particles 05um"]
-    data9 = aqdata["particles 10um"]
-    data10 = aqdata["particles 25um"]
-    data11 = aqdata["particles 50um"]
-    data12 = aqdata["particles 100um"]
-    data13 = bme680.temperature
-    data14 = bme680.relative_humidity
-    data15 = bme680.pressure
-    data16 = bme680.altitude
-    time1 = time.time()
     if variable_type == 1:
-        file_writer.writerow(int([time1, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15, data16]))
-    elif variable_type == 2:
-        file_writer.writerow(str([time1, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15, data16]))
+	data1 = int(aqdata["pm10 standard"])
+        data2 = int(aqdata["pm25 standard"])
+        data3 = int(aqdata["pm100 standard"])
+        data4 = int(aqdata["pm10 env"])
+        data5 = int(aqdata["pm25 env"]) 
+        data6 = int(aqdata["pm100 env"])
+        data7 = int(aqdata["particles 03um"])
+        data8 = int(aqdata["particles 05um"])
+        data9 = int(aqdata["particles 10um"])
+        data10 = int(aqdata["particles 25um"])
+        data11 = int(aqdata["particles 50um"])
+        data12 = int(aqdata["particles 100um"])
+        data13 = int(bme680.temperature)
+        data14 = int(bme680.relative_humidity)
+        data15 = int(bme680.pressure)
+        data16 = int(bme680.altitude)
+        time1 = int(time.time())
+   if variable_type == 2:
+	data1 = str(aqdata["pm10 standard"])
+        data2 = str(aqdata["pm25 standard"])
+        data3 = str(aqdata["pm100 standard"])
+        data4 = str(aqdata["pm10 env"])
+        data5 = str(aqdata["pm25 env"]) 
+        data6 = str(aqdata["pm100 env"])
+        data7 = str(aqdata["particles 03um"])
+        data8 = str(aqdata["particles 05um"])
+        data9 = str(aqdata["particles 10um"])
+        data10 = str(aqdata["particles 25um"])
+        data11 = str(aqdata["particles 50um"])
+        data12 = str(aqdata["particles 100um"])
+        data13 = str(bme680.temperature)
+        data14 = str(bme680.relative_humidity)
+        data15 = str(bme680.pressure)
+        data16 = str(bme680.altitude)
+        time1 = str(time.time())
+   
+    file_writer.writerow([time1, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15, data16])
     count = count + 1
 		
 	
