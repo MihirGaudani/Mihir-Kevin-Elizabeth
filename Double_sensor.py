@@ -114,7 +114,7 @@ while count < runtime:
         file_writer.writerow(str([time1, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15, data16]))
     elif variable_type == 3:
         file_writer.writerow(float([time1, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15, data16]))
-    count++
+    count = count + 1
 		
 	
 
