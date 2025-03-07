@@ -50,7 +50,7 @@ i = 0
 
 file = open("data.csv", "w", newline=None)
 file_writer = csv.writer(file)
-file_writer.writerow(["time", "PM10_Standard", "PM25_Standard", "PM100_Standard", "PM10_Enviornment", "PM25_Enviornment", "PM100_Enviornment", "Particles_03um", "Particles_05um", "Particles_10um", "Particles_25um", "Particles_50um", "Particles_100um"])
+file_writer.writerow(["time", "PM10_Standard", "PM25_Standard", "PM100_Standard", "PM10_Enviornment", "PM25_Enviornment", "PM100_Enviornment", "Particles_03um", "Particles_05um", "Particles_10um", "Particles_25um", "Particles_50um", "Particles_100um", "Tempurature", "Relative_Humidity", "Pressure", "Altitude", "Gas"])
 print("Found PM2.5 sensor, reading data...")
 print(sys.argv)
 
@@ -90,7 +90,7 @@ while count < runtime:
     print("Particles > 5.0um / 0.1L air:", aqdata["particles 50um"])
     print("Particles > 10 um / 0.1L air:", aqdata["particles 100um"])
     print("---------------------------------------")
-    print("\n", time.ctime(),"Temperature %0.1f C" % bme680.temperature,"Gas %d ohm" % bme680.temperature,"Humidity: %0.1f %%" % bme680.relative_humidity,"Pressure: %0.3f hPa" % bme680.pressure,"Altitude = %0.2f meters" % bme680.altitude,time.ctime())
+    print("\n", time.ctime(),"Temperature %0.1f C" % bme680.temperature,"Gas %d ohm" % bme680.gas,"Humidity: %0.1f %%" % bme680.relative_humidity,"Pressure: %0.3f hPa" % bme680.pressure,"Altitude = %0.2f meters" % bme680.altitude,time.ctime())
     if variable_type == 1:
          PM10_Standard = int(aqdata["pm10 standard"])
          PM25_Standard = int(aqdata["pm25 standard"])
@@ -109,6 +109,7 @@ while count < runtime:
          Pressure = int(bme680.pressure)
          Altitude = int(bme680.altitude)
          time1 = int(time.time())
+	 Gas = int(bme680.gas)
     elif variable_type == 2:
          PM10_Standard = str(aqdata["pm10 standard"])
          PM25_Standard = str(aqdata["pm25 standard"])
@@ -127,6 +128,7 @@ while count < runtime:
          Pressure = str(bme680.pressure)
          Altitude = str(bme680.altitude)
          time1 = str(time.time())
+	 Gas = str(bme680.gas)
     elif variable_type == 3:
          PM10_Standard = float(aqdata["pm10 standard"])
          PM25_Standard = float(aqdata["pm25 standard"])
@@ -145,8 +147,9 @@ while count < runtime:
          Pressure = float(bme680.pressure)
          Altitude = float(bme680.altitude)
          time1 = float(time.time())
+	 Gas = float(bme680.gas)
    
-    file_writer.writerow([time1, PM10_Standard, PM25_Standard, PM100_Standard, PM10_Enviornment, PM25_Enviornment, PM100_Enviornment, Particles_03um, Particles_05um, Particles_10um, Particles_25um, Particles_50um, Particles_100um, Tempurature, Relative_Humidity, Pressure, Altitude])
+    file_writer.writerow([time1, PM10_Standard, PM25_Standard, PM100_Standard, PM10_Enviornment, PM25_Enviornment, PM100_Enviornment, Particles_03um, Particles_05um, Particles_10um, Particles_25um, Particles_50um, Particles_100um, Tempurature, Relative_Humidity, Pressure, Altitude, Gas])
     count = count + 1
 		
 	
