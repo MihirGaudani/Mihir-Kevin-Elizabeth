@@ -22,7 +22,7 @@ while thirds > 120:
         GPIO.add_event_detect(6, GPIO.BOTH, callback=my_callback)
 
 
-    thirds = time() - seconds
+    
  
 finally:
     GPIO.cleanup()
