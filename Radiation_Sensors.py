@@ -22,5 +22,3 @@ while a < 3:
     GPIO.add_event_detect(channel, GPIO.RISING)
     if GPIO.event_detected(channel):
         print("I did it")
-finally:
-    GPIO.cleanup()
