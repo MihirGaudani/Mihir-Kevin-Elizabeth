@@ -18,3 +18,5 @@ try:
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(6, GPIO.IN)
     GPIO.add_event_detect(6, GPIO.BOTH, callback=my_callback)
+finally:
+    GPIO.cleanup()
