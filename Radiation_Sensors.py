@@ -20,5 +20,5 @@ while thirds < 120:
     time.sleep(10)
     thirds = thirds + 10
     if thirds == 60:
-        print(count)
+        print(Count)
 
