@@ -19,6 +19,7 @@ thirds = 0
 while thirds < 120:
     time.sleep(10)
     thirds = thirds + 10
+    print("I'm not dead")
     if thirds == 60:
         print(Count)
 
