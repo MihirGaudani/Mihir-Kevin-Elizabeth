@@ -5,7 +5,8 @@ import time
 #NOTE: you will want to use a falling-edge event detection
 #NOTE: call-back methods are functions that only run when some external property changes, 
 #in this case, the change in voltage on the GPIO pin
-global Count = 0
+global Count
+Count = 0
 def my_callback(channel):
      print('\n▼  at ' + str(datetime.datetime.now()))
      global Count
