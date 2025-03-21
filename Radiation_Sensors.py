@@ -6,6 +6,9 @@ import time
 #NOTE: call-back methods are functions that only run when some external property changes, 
 #in this case, the change in voltage on the GPIO pin
 Count = 0
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(6, GPIO.IN)
+        GPIO.add_event_detect(6, GPIO.BOTH, callback=my_callback)
 def my_callback(channel):
     if GPIO.input(channel) == GPIO.LOW:
         print('\n▼  at ' + str(datetime.datetime.now()))
@@ -14,11 +17,13 @@ def my_callback(channel):
         print('\n ▲ at ' + str(datetime.datetime.now())) 
         
         Count = Count + 1
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(6, GPIO.IN)
+GPIO.add_event_detect(6, GPIO.BOTH, callback=my_callback)
 a = 1
-try:
-    while a < 3:
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setup(6, GPIO.IN)
-        GPIO.add_event_detect(6, GPIO.BOTH, callback=my_callback)
+while a < 3:
+    GPIO.add_event_detect(channel, GPIO.RISING)
+    if GPIO.event_detected(channel):
+        print("I did it")
 finally:
     GPIO.cleanup()
