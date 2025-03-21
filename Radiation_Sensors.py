@@ -20,8 +20,3 @@ try:
     GPIO.add_event_detect(6, GPIO.BOTH, callback=my_callback)
  
  
-finally:
-    GPIO.cleanup()
- 
-print("Goodbye!")
- 
