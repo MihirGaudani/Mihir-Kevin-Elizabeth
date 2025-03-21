@@ -15,7 +15,7 @@ def my_callback(channel):
         Count = Count + 1
 seconds = time()
 thirds = 0
-while thirds > 60
+while thirds > 120
     try:
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(6, GPIO.IN)
