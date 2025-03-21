@@ -7,7 +7,7 @@ import time
 #in this case, the change in voltage on the GPIO pin
 Count = 0
 def my_callback(channel):
-    if GPIO.input(channel) == GPIO.HIGH:
+    if GPIO.input(channel) == GPIO.LOW:
         print('\n▼  at ' + str(datetime.datetime.now()))
         Count = Count + 1
     else:
