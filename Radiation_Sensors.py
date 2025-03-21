@@ -16,10 +16,9 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(6, GPIO.IN)
 GPIO.add_event_detect(6, GPIO.FALLING, callback=my_callback)
 thirds = 0
-while thirds > 120:
+while thirds < 120:
     time.sleep(10)
     thirds = thirds + 10
     if thirds == 60:
         print(count)
- 
-print("Goodbye!")
+
