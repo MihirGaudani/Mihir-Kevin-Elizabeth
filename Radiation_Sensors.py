@@ -21,7 +21,7 @@ try:
  
     message = raw_input('\nPress any key to exit.\n')
  
-time.sleep(60)
+
 print(count)
 GPIO.cleanup()
  
