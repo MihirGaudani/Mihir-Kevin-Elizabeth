@@ -25,7 +25,3 @@ while thirds > 120:
 
     thirds = time() - seconds
  
-finally:
-    GPIO.cleanup()
- 
-print("Goodbye!")
