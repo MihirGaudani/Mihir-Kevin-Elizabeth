@@ -22,7 +22,6 @@ try:
     message = raw_input('\nPress any key to exit.\n')
  
 
-print(count)
 GPIO.cleanup()
  
 print("Goodbye!")
