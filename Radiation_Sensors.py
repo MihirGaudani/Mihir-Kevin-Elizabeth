@@ -13,7 +13,7 @@ def my_callback(channel):
      Count = Count + 1
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(6, GPIO.IN)
+GPIO.setup(31, GPIO.IN)
 GPIO.add_event_detect(31, GPIO.FALLING, callback=my_callback)
 thirds = 0
 while thirds < 120:
