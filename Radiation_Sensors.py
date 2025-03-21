@@ -14,9 +14,11 @@ def my_callback(channel):
         print('\n ▲ at ' + str(datetime.datetime.now())) 
         
         Count = Count + 1
+a = 1
 try:
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(6, GPIO.IN)
-    GPIO.add_event_detect(6, GPIO.BOTH, callback=my_callback)
+    while a < 3:
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(6, GPIO.IN)
+        GPIO.add_event_detect(6, GPIO.BOTH, callback=my_callback)
 finally:
     GPIO.cleanup()
