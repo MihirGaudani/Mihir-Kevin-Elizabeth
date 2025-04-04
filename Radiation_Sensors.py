@@ -29,4 +29,5 @@ while thirds < int(sys.argv[1]):
         print(Count)
     file_writer.writerow([thirds, Count])
 print(Count)
+file.close()
 GPIO.cleanup()
