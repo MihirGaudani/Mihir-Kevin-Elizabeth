@@ -25,7 +25,7 @@ while thirds < int(sys.argv[1]):
     time.sleep(int(sys.argv[2]))
     thirds = thirds + int(sys.argv[2])
     print("I'm not dead")
-    if thirds == int(sys.argv[2]*6:
+    if thirds == int(sys.argv[2])*6:
         print(Count)
     file_writer.writerow([thirds, Count])
 
