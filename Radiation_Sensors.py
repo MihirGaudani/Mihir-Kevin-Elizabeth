@@ -9,7 +9,7 @@ import csv
 #in this case, the change in voltage on the GPIO pin
 global Count
 Count = 0
-file = open("data2.csv", "w", newline=None)
+file = open("RadiationData.csv", "w", newline=None)
 file_writer = csv.writer(file)
 file_writer.writerow(["time", "count"])
 def my_callback(channel):
