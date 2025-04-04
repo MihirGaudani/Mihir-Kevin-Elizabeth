@@ -28,5 +28,5 @@ while thirds < int(sys.argv[1]):
     if thirds == int(sys.argv[2])*6:
         print(Count)
     file_writer.writerow([thirds, Count])
-
+print(Count)
 GPIO.cleanup()
