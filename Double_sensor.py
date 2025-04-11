@@ -128,7 +128,7 @@ while count < runtime:
          Pressure = str(bme680.pressure)
          Altitude = str(bme680.altitude)
          time1 = str(time.time())
-	 Gas = str(bme680.gas)
+         Gas = str(bme680.gas)
     elif variable_type == 3:
          PM10_Standard = float(aqdata["pm10 standard"])
          PM25_Standard = float(aqdata["pm25 standard"])
@@ -147,7 +147,7 @@ while count < runtime:
          Pressure = float(bme680.pressure)
          Altitude = float(bme680.altitude)
          time1 = float(time.time())
-	 Gas = float(bme680.gas)
+         Gas = float(bme680.gas)
    
     file_writer.writerow([time1, PM10_Standard, PM25_Standard, PM100_Standard, PM10_Enviornment, PM25_Enviornment, PM100_Enviornment, Particles_03um, Particles_05um, Particles_10um, Particles_25um, Particles_50um, Particles_100um, Tempurature, Relative_Humidity, Pressure, Altitude, Gas])
     count = count + 1
