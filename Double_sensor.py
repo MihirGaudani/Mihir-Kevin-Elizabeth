@@ -109,7 +109,7 @@ while count < runtime:
          Pressure = int(bme680.pressure)
          Altitude = int(bme680.altitude)
          time1 = int(time.time())
-	 Gas = int(bme680.gas)
+         Gas = int(bme680.gas)
     elif variable_type == 2:
          PM10_Standard = str(aqdata["pm10 standard"])
          PM25_Standard = str(aqdata["pm25 standard"])
